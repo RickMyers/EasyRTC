@@ -29,9 +29,9 @@ String.prototype.pad = function (len,char,left) {
 }
 let fs      = require('fs');
 let sslRoot = (process.platform === 'win32') ? '/apache/Apache24' : '/etc/apache2';
-let key     = fs.readFileSync(sslRoot+'/ssl.key/dashboard.argusdentalvision.com.key');
-let cert    = fs.readFileSync(sslRoot+'/ssl.crt/287a95a19db33aad.crt' );
-let ca      = fs.readFileSync(sslRoot+'/ssl.crt/gd_bundle-g2-g1.crt' );
+let key     = fs.readFileSync(sslRoot+'/ssl.key/some.key');
+let cert    = fs.readFileSync(sslRoot+'/ssl.crt/cert.crt' );
+let ca      = fs.readFileSync(sslRoot+'/ssl.crt/ca.crt' );
 let app     = require('express')();
 let mysql   = require('mysql');
 let https   = require("https").createServer({ key:  key,  cert: cert,  ca:  ca },app).listen(3000,function () {
